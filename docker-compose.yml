@@ -8,7 +8,7 @@ services:
     #  net: ${NETWORK}
     environment:
       - NEO4J_AUTH=none
-      - elastic="http://elastic_container"
+      - elastic="http://elasticsearch"
     volumes:
       - ./neo4j/conf:/conf
       - ./neo4j/plugins:/plugins
@@ -19,7 +19,7 @@ services:
     image: elasticsearch:2.2.2
     restart: always
     #  net: ${NETWORK}
-    container_name: elastic_container
+    container_name: elasticsearch
     ports:
       - "9200:9200"
     volumes:
